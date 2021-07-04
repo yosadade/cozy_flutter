@@ -53,6 +53,18 @@ flutter:
     - assets/space1.png
     - assets/space2.png
     - assets/space3.png
+    - assets/tips1.png
+    - assets/tips2.png
+    - assets/icon_card_solid.png
+    - assets/icon_home_solid.png
+    - assets/icon_love_solid.png
+    - assets/icon_mail_solid.png
+    - assets/thumbnail.png
+    - assets/btn_back.png
+    - assets/btn_close.png
+    - assets/btn_map.png
+    - assets/btn_wishlist.png
+
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

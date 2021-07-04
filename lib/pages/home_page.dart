@@ -1,21 +1,21 @@
+import 'package:cozy/models/city.dart';
 import 'package:cozy/models/space.dart';
-import 'package:cozy/pages/city.dart';
+import 'package:cozy/models/tips.dart';
 import 'package:cozy/theme.dart';
+import 'package:cozy/widgets/bottom_navbar_item.dart';
 import 'package:cozy/widgets/city_card.dart';
 import 'package:cozy/widgets/space_cart.dart';
+import 'package:cozy/widgets/tips_card.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SafeArea(
-      bottom: false,
-      child: Padding(
-        padding: EdgeInsets.symmetric(
-          vertical: edge,
-        ),
+      body: SafeArea(
+        bottom: false,
         child: ListView(children: [
+          SizedBox(height: edge),
           // NOTE : TITLE/HEADER
           Padding(
             padding: EdgeInsets.only(left: edge),
@@ -110,12 +110,66 @@ class HomePage extends StatelessWidget {
                     price: 20,
                     city: 'Jakarta',
                     country: 'Indonesia',
-                    rating: 4)),
+                    rating: 3)),
               ],
             ),
-          )
+          ),
+          SizedBox(height: 30),
+          Padding(
+            padding: EdgeInsets.only(left: edge),
+            child: Text('Tips & Guidance',
+                style: regularTextStyle.copyWith(
+                  fontSize: 16,
+                )),
+          ),
+          SizedBox(height: 16),
+          Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: edge,
+            ),
+            child: Column(
+              children: [
+                TipsCard(Tips(
+                  id: 1,
+                  name: 'City Guidelines',
+                  imgUrl: 'assets/tips1.png',
+                  updateAt: '20 Apr',
+                )),
+                SizedBox(height: 20),
+                TipsCard(Tips(
+                  id: 1,
+                  name: 'Jakarta Fairship',
+                  imgUrl: 'assets/tips2.png',
+                  updateAt: '11 Dec',
+                )),
+                SizedBox(height: 20),
+              ],
+            ),
+          ),
+          SizedBox(height: 50 + edge),
         ]),
       ),
-    ));
+      floatingActionButton: Container(
+        height: 65,
+        width: MediaQuery.of(context).size.width - (2 * edge),
+        margin: EdgeInsets.symmetric(horizontal: edge),
+        decoration: BoxDecoration(
+            color: Color(0xffF6F7F8), borderRadius: BorderRadius.circular(23)),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            BottomNavbarItem(
+                imageUrl: 'assets/icon_home_solid.png', isActive: true),
+            BottomNavbarItem(
+                imageUrl: 'assets/icon_card_solid.png', isActive: false),
+            BottomNavbarItem(
+                imageUrl: 'assets/icon_love_solid.png', isActive: false),
+            BottomNavbarItem(
+                imageUrl: 'assets/icon_mail_solid.png', isActive: false),
+          ],
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+    );
   }
 }

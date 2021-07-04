@@ -1,4 +1,5 @@
-import 'package:cozy/pages/city.dart';
+
+import 'package:cozy/models/city.dart';
 import 'package:cozy/theme.dart';
 import 'package:flutter/material.dart';
 
