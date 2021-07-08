@@ -1,10 +1,19 @@
 import 'package:cozy/theme.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/material.dart';
 import 'package:cozy/widgets/facility_item.dart';
 
 class DetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    launchUrl(String url) async {
+      if (await canLaunch(url)) {
+        await launch(url);
+      } else {
+        throw (url);
+      }
+    }
+
     return Scaffold(
       backgroundColor: whiteColor,
       body: SafeArea(
@@ -138,7 +147,7 @@ class DetailPage extends StatelessWidget {
                                 SizedBox(width: 18),
                                 ClipRRect(
                                   borderRadius: BorderRadius.circular(10),
-                                  child: Image.asset('assets/photo1.png',
+                                  child: Image.asset('assets/photo2.png',
                                       width: 110,
                                       height: 88,
                                       fit: BoxFit.cover),
@@ -146,7 +155,7 @@ class DetailPage extends StatelessWidget {
                                 SizedBox(width: 18),
                                 ClipRRect(
                                   borderRadius: BorderRadius.circular(10),
-                                  child: Image.asset('assets/photo1.png',
+                                  child: Image.asset('assets/photo3.png',
                                       width: 110,
                                       height: 88,
                                       fit: BoxFit.cover),
@@ -173,7 +182,12 @@ class DetailPage extends StatelessWidget {
                       children: [
                         Text('Jln. Kappan Sukses No. 20\nPalembang',
                             style: greyTextStyle),
-                        Image.asset('assets/btn_map.png', width: 40)
+                        InkWell(
+                            onTap: () {
+                              launchUrl(
+                                  'https://www.google.co.id/maps/@-6.2023338,106.7994117,16z?hl=id');
+                            },
+                            child: Image.asset('assets/btn_map.png', width: 40))
                       ]),
                 ),
                 SizedBox(height: 40),
@@ -183,17 +197,24 @@ class DetailPage extends StatelessWidget {
                   ),
                   height: 50,
                   width: MediaQuery.of(context).size.width - (2 * edge),
-                  child: RaisedButton(
-                      onPressed: () {},
-                      color: purpleColor,
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(17)),
-                      child: Text('Book Now',
-                          style: whiteTextStyle.copyWith(fontSize: 16))),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      launchUrl('tel:+6288233123240');
+                    },
+                    style: ElevatedButton.styleFrom(
+                        primary: purpleColor,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(17))),
+                    child: Text('Book Now',
+                        style: whiteTextStyle.copyWith(
+                          fontSize: 16,
+                        )),
+                  ),
                 ),
                 SizedBox(height: 40),
               ],
             ),
-                        Padding(
+            Padding(
               padding: EdgeInsets.symmetric(vertical: 30, horizontal: edge),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
