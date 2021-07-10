@@ -1,16 +1,22 @@
 import 'package:cozy/models/city.dart';
 import 'package:cozy/models/space.dart';
 import 'package:cozy/models/tips.dart';
+import 'package:cozy/provider/space_provider.dart';
 import 'package:cozy/theme.dart';
 import 'package:cozy/widgets/bottom_navbar_item.dart';
 import 'package:cozy/widgets/city_card.dart';
 import 'package:cozy/widgets/space_cart.dart';
 import 'package:cozy/widgets/tips_card.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+
+    var spaceProvider = Provider.of<SpaceProvider>(context);
+    spaceProvider.getRecommendedSpace();
+
     return Scaffold(
       backgroundColor: whiteColor,
       body: SafeArea(
@@ -93,7 +99,14 @@ class HomePage extends StatelessWidget {
                     price: 52,
                     city: 'Bandung',
                     country: 'Germany',
-                    rating: 4)),
+                    rating: 4,
+                    address: '',
+                    mapUrl: '',
+                    numberOfBadrooms: 0,
+                    numberOfCupboards: 0,
+                    numberOfKitchens: 0,
+                    phone: '',
+                    photos: [])),
                 SizedBox(height: 30),
                 SpaceCard(Space(
                     id: 1,
@@ -102,7 +115,14 @@ class HomePage extends StatelessWidget {
                     price: 11,
                     city: 'Seattle',
                     country: 'United State',
-                    rating: 5)),
+                    rating: 5,
+                    address: '',
+                    mapUrl: '',
+                    numberOfBadrooms: 0,
+                    numberOfCupboards: 0,
+                    numberOfKitchens: 0,
+                    phone: '',
+                    photos: [])),
                 SizedBox(height: 30),
                 SpaceCard(Space(
                     id: 1,
@@ -111,7 +131,14 @@ class HomePage extends StatelessWidget {
                     price: 20,
                     city: 'Jakarta',
                     country: 'Indonesia',
-                    rating: 3)),
+                    rating: 3,
+                    address: '',
+                    mapUrl: '',
+                    numberOfBadrooms: 0,
+                    numberOfCupboards: 0,
+                    numberOfKitchens: 0,
+                    phone: '',
+                    photos: [])),
               ],
             ),
           ),

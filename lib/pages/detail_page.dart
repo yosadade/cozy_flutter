@@ -1,3 +1,4 @@
+import 'package:cozy/pages/error_page.dart';
 import 'package:cozy/theme.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/material.dart';
@@ -10,7 +11,9 @@ class DetailPage extends StatelessWidget {
       if (await canLaunch(url)) {
         await launch(url);
       } else {
-        throw (url);
+        // throw (url);
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => ErrorPage()));
       }
     }
 
@@ -186,6 +189,7 @@ class DetailPage extends StatelessWidget {
                             onTap: () {
                               launchUrl(
                                   'https://www.google.co.id/maps/@-6.2023338,106.7994117,16z?hl=id');
+                                  // );
                             },
                             child: Image.asset('assets/btn_map.png', width: 40))
                       ]),
