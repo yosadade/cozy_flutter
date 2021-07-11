@@ -31,6 +31,12 @@ dependencies:
   url_launcher: ^6.0.9
   provider: ^5.0.0
   http: ^0.13.3
+  # flutter_launcher_icons: ^0.9.0
+
+  # flutter_icons:    
+  # android: "launcher_icon" 
+  # ios: true    
+  # image_path: "assets/icon_logo.png"
 
 dev_dependencies:
   flutter_test:
@@ -52,10 +58,15 @@ flutter:
     - assets/city1.png
     - assets/city2.png
     - assets/city3.png
+    - assets/city4.png
+    - assets/city5.png
+    - assets/city6.png
     - assets/icon_star.png
     - assets/space1.png
     - assets/space2.png
     - assets/space3.png
+    - assets/space4.png
+    - assets/space5.png
     - assets/tips1.png
     - assets/tips2.png
     - assets/icon_card_solid.png
@@ -68,6 +79,7 @@ flutter:
     - assets/btn_map.png
     - assets/btn_wishlist.png
     - assets/icon_star.png
+    - assets/Icon_star_grey.png
     - assets/icon_kitchen.png
     - assets/icon_lemari.png
     - assets/icon_bedroom.png
@@ -75,6 +87,7 @@ flutter:
     - assets/photo2.png
     - assets/photo3.png
     - assets/404.png
+    - assets/icon_logo.png
 
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see

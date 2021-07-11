@@ -1,5 +1,6 @@
 import 'package:cozy/pages/error_page.dart';
 import 'package:cozy/theme.dart';
+import 'package:cozy/widgets/rating_item.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/material.dart';
 import 'package:cozy/widgets/facility_item.dart';
@@ -15,6 +16,40 @@ class DetailPage extends StatelessWidget {
         Navigator.push(
             context, MaterialPageRoute(builder: (context) => ErrorPage()));
       }
+    }
+
+    Future<void> _showMyDialog() async {
+      return showDialog<void>(
+        context: context,
+        barrierDismissible: false, // user must tap button!
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: const Text('Konfirmasi'),
+            content: SingleChildScrollView(
+              child: ListBody(
+                children: const <Widget>[
+                  Text('Apakah kamu ingin menghubungi pemilik kos?'),
+                ],
+              ),
+            ),
+            actions: <Widget>[
+              TextButton(
+                child: const Text('Batal'),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+              TextButton(
+                child: const Text('Telp'),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                   launchUrl('tel:+6288233123240');
+                },
+              ),
+            ],
+          );
+        },
+      );
     }
 
     return Scaffold(
@@ -70,15 +105,15 @@ class DetailPage extends StatelessWidget {
                             ),
                             Row(
                               children: [
-                                Image.asset('assets/icon_star.png', width: 20),
+                                RatingItem(index: 1, rating: 1),
                                 SizedBox(width: 2),
-                                Image.asset('assets/icon_star.png', width: 20),
+                                RatingItem(index: 2, rating: 1),
                                 SizedBox(width: 2),
-                                Image.asset('assets/icon_star.png', width: 20),
+                                RatingItem(index: 3, rating: 1),
                                 SizedBox(width: 2),
-                                Image.asset('assets/icon_star.png', width: 20),
+                                RatingItem(index: 4, rating: 1),
                                 SizedBox(width: 2),
-                                Image.asset('assets/icon_star.png', width: 20),
+                                RatingItem(index: 5, rating: 0),
                               ],
                             ),
                           ],
@@ -189,7 +224,7 @@ class DetailPage extends StatelessWidget {
                             onTap: () {
                               launchUrl(
                                   'https://www.google.co.id/maps/@-6.2023338,106.7994117,16z?hl=id');
-                                  // );
+                              // );
                             },
                             child: Image.asset('assets/btn_map.png', width: 40))
                       ]),
@@ -203,7 +238,7 @@ class DetailPage extends StatelessWidget {
                   width: MediaQuery.of(context).size.width - (2 * edge),
                   child: ElevatedButton(
                     onPressed: () {
-                      launchUrl('tel:+6288233123240');
+                     _showMyDialog();
                     },
                     style: ElevatedButton.styleFrom(
                         primary: purpleColor,

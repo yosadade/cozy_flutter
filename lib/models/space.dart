@@ -10,9 +10,9 @@ class Space {
   late String phone;
   late String mapUrl;
   late List photos;
-  late int numberOfKitchens;
-  late int numberOfBadrooms;
-  late int numberOfCupboards;
+  // late int numberOfKitchens;
+  // late int numberOfBadrooms;
+  // late int numberOfCupboards;
 
   // contractor
   Space({
@@ -27,25 +27,25 @@ class Space {
       required this.phone,
       required this.mapUrl,
       required this.photos,
-      required this.numberOfKitchens,
-      required this.numberOfBadrooms,
-      required this.numberOfCupboards
+      // required this.numberOfKitchens,
+      // required this.numberOfBadrooms,
+      // required this.numberOfCupboards
   });
 
     Space.fromJson(json) {
     id = json['id'];
     name = json['name'];
-    city = json['city'];
-    country = json['country'];
     imageUrl = json['image_url'];
     price = json['price'];
+    city = json['city'];
+    country = json['country'];
     rating = json['rating'];
     address = json['address'];
     phone = json['phone'];
     mapUrl = json['map_url']; 
     photos = json['photos'];
-    numberOfKitchens = json['number_of_kitchens'];
-    numberOfBadrooms = json['number_of_badrooms'];
-    numberOfCupboards = json['number_of_cupboards'];
+    // numberOfKitchens = json['number_of_kitchens'];
+    // numberOfBadrooms = json['number_of_badrooms'];
+    // numberOfCupboards = json['number_of_cupboards'];
   }
 }

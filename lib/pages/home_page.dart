@@ -1,21 +1,20 @@
 import 'package:cozy/models/city.dart';
 import 'package:cozy/models/space.dart';
 import 'package:cozy/models/tips.dart';
-import 'package:cozy/provider/space_provider.dart';
+// import 'package:cozy/provider/space_provider.dart';
 import 'package:cozy/theme.dart';
 import 'package:cozy/widgets/bottom_navbar_item.dart';
 import 'package:cozy/widgets/city_card.dart';
 import 'package:cozy/widgets/space_cart.dart';
 import 'package:cozy/widgets/tips_card.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+// import 'package:provider/provider.dart';
 
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
-    var spaceProvider = Provider.of<SpaceProvider>(context);
-    spaceProvider.getRecommendedSpace();
+    // var spaceProvider = Provider.of<SpaceProvider>(context);
+    // spaceProvider.getRecommendedSpace();
 
     return Scaffold(
       backgroundColor: whiteColor,
@@ -62,15 +61,33 @@ class HomePage extends StatelessWidget {
                     isPopular: false)),
                 SizedBox(width: 20),
                 CityCard(City(
-                    id: 1,
+                    id: 2,
                     imgUrl: 'assets/city2.png',
                     name: 'Bandung',
                     isPopular: true)),
                 SizedBox(width: 20),
                 CityCard(City(
-                    id: 1,
+                    id: 3,
                     imgUrl: 'assets/city3.png',
                     name: 'Surabaya',
+                    isPopular: false)),
+                SizedBox(width: 24),
+                CityCard(City(
+                    id: 4,
+                    imgUrl: 'assets/city4.png',
+                    name: 'Palembang',
+                    isPopular: false)),
+                SizedBox(width: 24),
+                CityCard(City(
+                    id: 5,
+                    imgUrl: 'assets/city5.png',
+                    name: 'Aceh',
+                    isPopular: true)),
+                SizedBox(width: 24),
+                CityCard(City(
+                    id: 6,
+                    imgUrl: 'assets/city6.png',
+                    name: 'Bogor',
                     isPopular: false)),
                 SizedBox(width: 24),
               ],
@@ -102,14 +119,14 @@ class HomePage extends StatelessWidget {
                     rating: 4,
                     address: '',
                     mapUrl: '',
-                    numberOfBadrooms: 0,
-                    numberOfCupboards: 0,
-                    numberOfKitchens: 0,
+                    // numberOfBadrooms: 0,
+                    // numberOfCupboards: 0,
+                    // numberOfKitchens: 0,
                     phone: '',
                     photos: [])),
                 SizedBox(height: 30),
                 SpaceCard(Space(
-                    id: 1,
+                    id: 2,
                     name: 'Roemah Nenek',
                     imageUrl: 'assets/space2.png',
                     price: 11,
@@ -118,14 +135,14 @@ class HomePage extends StatelessWidget {
                     rating: 5,
                     address: '',
                     mapUrl: '',
-                    numberOfBadrooms: 0,
-                    numberOfCupboards: 0,
-                    numberOfKitchens: 0,
+                    // numberOfBadrooms: 0,
+                    // numberOfCupboards: 0,
+                    // numberOfKitchens: 0,
                     phone: '',
                     photos: [])),
                 SizedBox(height: 30),
                 SpaceCard(Space(
-                    id: 1,
+                    id: 3,
                     name: 'Darrling How',
                     imageUrl: 'assets/space3.png',
                     price: 20,
@@ -134,9 +151,41 @@ class HomePage extends StatelessWidget {
                     rating: 3,
                     address: '',
                     mapUrl: '',
-                    numberOfBadrooms: 0,
-                    numberOfCupboards: 0,
-                    numberOfKitchens: 0,
+                    // numberOfBadrooms: 0,
+                    // numberOfCupboards: 0,
+                    // numberOfKitchens: 0,
+                    phone: '',
+                    photos: [])),
+                SizedBox(height: 30),
+                SpaceCard(Space(
+                    id: 4,
+                    name: 'Orang Crown',
+                    imageUrl: 'assets/space4.png',
+                    price: 20,
+                    city: 'Padang',
+                    country: 'Indonesia',
+                    rating: 3,
+                    address: '',
+                    mapUrl: '',
+                    // numberOfBadrooms: 0,
+                    // numberOfCupboards: 0,
+                    // numberOfKitchens: 0,
+                    phone: '',
+                    photos: [])),
+                SizedBox(height: 30),
+                SpaceCard(Space(
+                    id: 5,
+                    name: 'City of Cactus',
+                    imageUrl: 'assets/space5.png',
+                    price: 20,
+                    city: 'Jakarta',
+                    country: 'Indonesia',
+                    rating: 3,
+                    address: '',
+                    mapUrl: '',
+                    // numberOfBadrooms: 0,
+                    // numberOfCupboards: 0,
+                    // numberOfKitchens: 0,
                     phone: '',
                     photos: [])),
               ],
